@@ -1,4 +1,3 @@
-# Flow/Script JSBox 脚本合集（编辑中）
 ### [1Search]()
 脚本作者：`JunM`  
 上传时间：`2018/07/14`  
