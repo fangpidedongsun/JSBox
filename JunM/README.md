@@ -7,7 +7,7 @@
 [![](https://img.shields.io/badge/DraftsToOmniFocus-JunM-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/JunM/DraftsToOmniFocus.js)  
 `从 Drafts 快速添加 OmniFocus 任务`
 
-![](https://img.shields.io/badge/PIC_Compress-JunM-brightgreen.svg)  
+[![](https://img.shields.io/badge/PIC_Compress-JunM-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/JunM/PIC_Compress.js)  
 `快捷图片压缩`
 
 [![](https://img.shields.io/badge/RedeemiTunesCode-JunM-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/JunM/RedeemiTunesCode.js)  
