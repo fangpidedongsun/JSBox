@@ -18,7 +18,7 @@
 [![](https://img.shields.io/badge/LoadingPatch-AbleCats-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/AbleCats/LoadingPatch.js)  
 `脚本 Loading 模块`
 
-[![](https://img.shields.io/badge/netSpeedPatch-AbleCats-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/AbleCats/LoadingPatch.js)  
+[![](https://img.shields.io/badge/netSpeedPatch-AbleCats-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/AbleCats/netSpeedPatch.js)  
 `网速补丁模块`
 
 [![](https://img.shields.io/badge/快递100-AbleCats-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/AbleCats/%E5%BF%AB%E9%80%92100.js)  
