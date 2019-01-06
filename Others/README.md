@@ -8,4 +8,5 @@
 
 # 关于作者
 [![](https://img.shields.io/badge/Telegram-Mu_Wei-1A92D2.svg?logo=Telegram&logoColor=white)]()  
+[![](https://img.shields.io/badge/GitHub-cyanzhong-brightgreen.svg?logo=GitHub&logoColor=white)](https://github.com/cyanzhong)
 [![](https://img.shields.io/badge/Telegram-@cyanapps-1A92D2.svg?logo=Telegram&logoColor=white)](https://t.me/cyanapps)
