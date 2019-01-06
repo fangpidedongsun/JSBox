@@ -6,17 +6,77 @@
 
 作者联系：https://t.me/axel_burks
 */
-var version = 1.2
+var version = 1.51
 
 var extensions = $cache.get("extensions") || []
 const DeviceSIZE = $device.info.screen
+var current_list = extensions
+var addins = $addin.list
+var ext_icon = new Object()
+for (var i = 0; i < addins.length; i++) {
+  ext_icon[addins[i].name.replace('.js', '')] = addins[i].icon.replace('.png', '').replace('icon_', '')
+}
 
-if ($app.env != $env.app) {
-  $ui.menu({
-    items: extensions,
-    handler: function(title, idx) {
-      $app.openExtension(title)
-    }
+if ($app.env == $env.today) {
+  $ui.render({
+    props: {
+      title: "Tool Box"
+    },
+    views: [{
+      type: "matrix",
+      props: {
+        columns: 4,
+        itemHeight: 55,
+        spacing: 0,
+        template: [{
+            type: "blur",
+            props: {
+              radius: 1.0,
+              style: 9
+            },
+            layout: $layout.fill
+          },
+          {
+            type: "label",
+            props: {
+              id: "title",
+              textColor: $color("black"),
+              bgcolor: $color("clear"),
+              font: $font(10)
+            },
+            layout(make, view) {         
+              make.bottom.inset(0)
+              make.centerX.equalTo(view.super)
+              make.height.equalTo(19)
+            }
+          },
+          {
+            type: "image",
+            props: {
+              id: "icon",
+              bgcolor: $color("clear")
+            },
+            layout(make, view) {
+              make.top.inset(12)
+              make.centerX.equalTo(view.super)
+              make.size.equalTo(22)
+            }
+          }
+        ],
+        data: extensions.map(function(item, index) { 
+          return {
+            title: { text: item },
+            icon: { icon: $icon(ext_icon[item], $color("darkGray"), $size(20, 20)) }
+          }
+        })
+      },
+      layout: $layout.fill,
+      events: {
+        didSelect(sender, indexPath, data) {
+          $app.openExtension(data.title.text)
+        }
+      }
+    }]
   })
   return
 }
@@ -37,7 +97,7 @@ $ui.render({
         align: $align.center,
         clearsOnBeginEditing:true,
         bgcolor: $rgba(0, 0, 0, 0.04),
-        placeholder: "搜索"
+        placeholder: "Search"
       },
       layout: function (make, view) {
         make.top.equalTo(view.prev).inset(8)
@@ -175,17 +235,27 @@ $ui.render({
             },
             events: {
               tapped: function(sender) {
-                if (sender.title == null) {
+                if (sender.title == "") {
                   return
                 }
-                $addin.run(sender.title)
+                if ($app.env == $env.app) {
+                  $app.openURL("jsbox://run?name=" + encodeURIComponent(sender.title))
+                } else {
+                  $addin.run(sender.title)
+                }
               }
             }
           },
         ],
         actions: [
           {
-            title: "delete",
+            title: "Edit",
+            handler: function(sender, indexPath) {
+              editItem(indexPath)
+            }
+          },
+          {
+            title: "Delete",
             handler: function(sender, indexPath) {
               deleteItem(indexPath)
             }
@@ -208,11 +278,6 @@ $ui.render({
   ]
 })
 
-var addins = $addin.list
-var ext_icon = new Object()
-for (var i = 0; i < addins.length; i++) {
-  ext_icon[addins[i].name.replace('.js', '')] = addins[i].icon.replace('.png', '').replace('icon_', '')
-}
 var listView = $("list")
 for (var i = 0; i < extensions.length; i++) {
   if ($file.extensions.indexOf(extensions[i]) === -1) {
@@ -220,7 +285,7 @@ for (var i = 0; i < extensions.length; i++) {
   }
 }
 saveItems()
-updateItem(extensions)
+updateItem(extensions, "init")
 
 function selectItem() {
   $ui.push({
@@ -329,9 +394,10 @@ function selectItem() {
   })
 }
 
-function updateItem(data) {
+function updateItem(data, status) {
+  current_list = data
   var temp = []
-  count = data.length
+  var count = data.length
   if (count > 0) {
     for (var id = 0; id < count; id++) {
       var ext_name = data[id]
@@ -351,20 +417,39 @@ function updateItem(data) {
       })
     }
   } else {
-    temp = [{
-      icon: {
-        icon: $icon("100", $color("clear"), $size(20, 20)),
-      },
-      name: {
-        text: "未添加扩展，请点击 ⚙️ 按钮"
-      },
-      run: {
-        src: ""
-      },
-      tapArea: {}
-    }]
+    if (status == "init") {
+      temp = [{
+        icon: {
+          icon: $icon("100", $color("clear"), $size(20, 20)),
+        },
+        name: {
+          text: "未添加扩展，请点击 ⚙️ 按钮"
+        },
+        run: {
+          src: ""
+        },
+        tapArea: {
+          title: ""
+        }
+      }]
+    } else {
+      temp = [{
+        icon: {
+          icon: $icon("100", $color("clear"), $size(20, 20)),
+        },
+        name: {
+          text: "Inputing...Try to tap Return button..."
+        },
+        run: {
+          src: ""
+        },
+        tapArea: {
+          title: ""
+        }
+      }]
+    }
   }
-  
+
   listView.data = temp
 }
 
@@ -390,8 +475,13 @@ function insertItem(text) {
   saveItems()
 }
 
+function editItem(indexPath) {
+  var name = current_list[indexPath.row]
+  $app.openURL("jsbox://open?name=" + encodeURIComponent(name))
+}
+
 function deleteItem(indexPath) {
-  var text = extensions[indexPath.row]
+  var text = current_list[indexPath.row]
   var index = extensions.indexOf(text)
   if (index >= 0) {
     extensions.splice(index, 1)
@@ -400,6 +490,7 @@ function deleteItem(indexPath) {
 }
 
 function saveItems() {
+  current_list = extensions
   $cache.set("extensions", extensions)
 }
 
@@ -431,7 +522,7 @@ function updateSwitch(name, delay) {
   $delay(delay, function() {
     updateSwitchlist()
   })
-  updateItem(extensions)
+  updateItem(extensions, "init")
 }
 
 function updateSwitchlist() {
@@ -456,12 +547,16 @@ function statusAll() {
 
 function switchAll(status) {
   if (status == true) {
-    extensions = $file.extensions
+    var allexts = $file.extensions
+    for (var i = 0; i < extensions.length; i++) {
+      allexts.removeByValue(extensions[i]);
+    }
+    extensions = extensions.concat(allexts)
   } else {
     extensions = []
   }
   updateSwitchlist()
-  updateItem(extensions)
+  updateItem(extensions, "init")
   saveItems()
 }
 
@@ -469,6 +564,15 @@ Array.prototype.move = function(from, to) {
   var object = this[from]
   this.splice(from, 1)
   this.splice(to, 0, object)
+}
+
+Array.prototype.removeByValue = function(val) {
+  for(var i=0; i<this.length; i++) {
+    if(this[i] == val) {
+      this.splice(i, 1);
+      break;
+    }
+  }
 }
 
 $thread.background({
@@ -490,7 +594,7 @@ function checkVersion() {
           actions: [{
             title: "更新",
             handler: function() {
-              var url = "jsbox://install?url=https://raw.githubusercontent.com/axelburks/JSBox/master/Tool%20Box.js&name=Tool Box&icon=icon_102.png";
+              var url = "jsbox://install?url=https://raw.githubusercontent.com/axelburks/JSBox/master/Tool%20Box.js&name=" + $addin.current.name.split(".js")[0] + "&icon=" + $addin.current.icon;
               $app.openURL(encodeURI(url));
               $app.close()
             }
