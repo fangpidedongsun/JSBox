@@ -250,6 +250,6 @@
 [![](https://img.shields.io/badge/GitHub-Neurogram--R-brightgreen.svg?logo=GitHub&logoColor=white)](https://github.com/Neurogram-R)
 [![](https://img.shields.io/badge/Telegram%20Channel-@Flow__Script-1A92D2.svg?logo=Twitter&logoColor=white)](https://t.me/Flow_Script)
 [![](https://img.shields.io/badge/Twitter-@FlowScript__News-1DA1F2.svg?logo=Twitter&logoColor=white)](https://twitter.com/FlowScript_News)
-[![](https://img.shields.io/badge/Weibo-@Flow__Script-1DA1F2.svg)](https://weibo.com/FlowScript)
+[![](https://img.shields.io/badge/Weibo-@Flow__Script-DF2029.svg)](https://weibo.com/FlowScript)
 
 
