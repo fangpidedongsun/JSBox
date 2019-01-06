@@ -26,3 +26,7 @@
 
 [![](https://img.shields.io/badge/循环删除相册内容-JunM-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/JunM/%E5%BE%AA%E7%8E%AF%E5%88%A0%E9%99%A4%E7%9B%B8%E5%86%8C%E5%86%85%E5%AE%B9.js)  
 `相册图片快捷删除`
+
+# 关于作者
+[![](https://img.shields.io/badge/GitHub-mjyspace-brightgreen.svg?logo=GitHub&logoColor=white)](https://github.com/mjyspace)
+[![](https://img.shields.io/badge/Telegram-@jun__m-1A92D2.svg?logo=Telegram&logoColor=white)](https://t.me/jun_m)
