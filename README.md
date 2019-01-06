@@ -28,7 +28,7 @@
 ### [Call Forwarding]()  ![](https://img.shields.io/badge/Neurogram-2018/08/06-brightgreen.svg)  
 
 
-### [Catcher]()  ![](https://img.shields.io/badge/lco20%lok-2018/10/04-brightgreen.svg)  
+### [Catcher]()  ![](https://img.shields.io/badge/lco%20lok-2018/10/04-brightgreen.svg)  
 
 
 ### [Chars Keyboard]()  ![](https://img.shields.io/badge/Neurogram-2018/04/18-brightgreen.svg)  
@@ -178,7 +178,7 @@
 ### [rixCloud 流量查询]()  ![](https://img.shields.io/badge/JunM-2018/05/24-brightgreen.svg)  
 
 
-### [RMB]()  ![](https://img.shields.io/badge/Ying20%Zhong-2018/01/25-brightgreen.svg)  
+### [RMB]()  ![](https://img.shields.io/badge/Ying%20Zhong-2018/01/25-brightgreen.svg)  
 
 
 ### [Schedule Message]()  ![](https://img.shields.io/badge/Axel-2018/04/16-brightgreen.svg)  
@@ -220,22 +220,22 @@
 ### [固件验证查询]()  ![](https://img.shields.io/badge/Hhdº-2017/12/25-brightgreen.svg)  
 
 
-### [橘历]()  ![](https://img.shields.io/badge/橘20%年-2018/10/26-brightgreen.svg)  
+### [橘历]()  ![](https://img.shields.io/badge/橘%20年-2018/10/26-brightgreen.svg)  
 
 
-### [橘年翻译]()  ![](https://img.shields.io/badge/橘20%年-2018/08/25-brightgreen.svg)  
+### [橘年翻译]()  ![](https://img.shields.io/badge/橘%20年-2018/08/25-brightgreen.svg)  
 
 
-### [橘年天气]()  ![](https://img.shields.io/badge/橘20%年-2018/08/22-brightgreen.svg)  
+### [橘年天气]()  ![](https://img.shields.io/badge/橘%20年-2018/08/22-brightgreen.svg)  
 
 
-### [橘年颜色]()  ![](https://img.shields.io/badge/橘20%年-2018/08/25-brightgreen.svg)  
+### [橘年颜色]()  ![](https://img.shields.io/badge/橘%20年-2018/08/25-brightgreen.svg)  
 
 
-### [橘年音乐]()  ![](https://img.shields.io/badge/橘20%年-2018/09/24-brightgreen.svg)  
+### [橘年音乐]()  ![](https://img.shields.io/badge/橘%20年-2018/09/24-brightgreen.svg)  
 
 
-### [橘年阅读]()  ![](https://img.shields.io/badge/橘20%年-2018/08/26-brightgreen.svg)  
+### [橘年阅读]()  ![](https://img.shields.io/badge/橘%20年-2018/08/26-brightgreen.svg)  
 
 
 ### [句子迷]()  ![](https://img.shields.io/badge/Hhdº-2018/06/25-brightgreen.svg)  
