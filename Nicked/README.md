@@ -23,3 +23,7 @@
 
 [![](https://img.shields.io/badge/秀美眉-Nicked-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/Nicked/%E7%A7%80%E7%BE%8E%E7%9C%89%20V1.1.js)  
 `*NSFW`
+
+# 关于作者
+[![](https://img.shields.io/badge/GitHub-nicktimebreak-brightgreen.svg?logo=GitHub&logoColor=white)](https://github.com/nicktimebreak)
+[![](https://img.shields.io/badge/Telegram-@Nicked-1A92D2.svg?logo=Telegram&logoColor=white)](https://t.me/Nicked)
