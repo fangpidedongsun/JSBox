@@ -25,4 +25,4 @@
 `快递100 JSBox 版`
 
 # 关于作者
-[![](https://img.shields.io/badge/GitHub-AbleCats-brightgreen.svg)](https://github.com/AbleCats) [![](https://img.shields.io/badge/Telegram-@AbleCats-brightgreen.svg)](https://t.me/AbleCats) 
+[![](https://img.shields.io/badge/GitHub-AbleCats-brightgreen.svg)](https://github.com/AbleCats) [![](https://img.shields.io/badge/Telegram-@AbleCats-1A92D2.svg)](https://t.me/AbleCats) 
