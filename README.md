@@ -1,5 +1,5 @@
 ![](https://img.shields.io/badge/1Search-JunM-brightgreen.svg)  
-`聚合搜索（ Google、搜狗、知乎、少数派、Google 图片、YouTube、必应词典、淘宝、京东、IP）`
+`聚合搜索（Google、搜狗、知乎、少数派、Google 图片、YouTube、必应词典、淘宝、京东、IP）`
 
 
 ![](https://img.shields.io/badge/33IQ-Hhd%C2%BA-brightgreen.svg)
