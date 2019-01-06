@@ -38,3 +38,6 @@
 
 [![](https://img.shields.io/badge/我的账本-Hhd%C2%BA-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/Hhd%C2%BA/%E6%88%91%E7%9A%84%E8%B4%A6%E6%9C%AC.js)  
 `记账小账本`
+
+# 关于作者
+[![](https://img.shields.io/badge/Telegram-@hehedahhd-1A92D2.svg?logo=Telegram&logoColor=white)](https://t.me/hehedahhd)
