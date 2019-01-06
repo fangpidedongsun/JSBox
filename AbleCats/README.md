@@ -23,3 +23,6 @@
 
 [![](https://img.shields.io/badge/快递100-AbleCats-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/AbleCats/%E5%BF%AB%E9%80%92100.js)  
 `快递100 JSBox 版`
+
+# 关于作者
+[![](https://img.shields.io/badge/GitHub-AbleCats-brightgreen.svg)](https://github.com/AbleCats) [![](https://img.shields.io/badge/Telegram-@AbleCats-brightgreen.svg)](https://t.me/AbleCats) 
