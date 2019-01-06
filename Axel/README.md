@@ -34,5 +34,5 @@
 `二维码解析后自动跳转相应的 App（支付宝、淘宝、口碑、京东、Safari、迅雷、磁力、OFO扫车码）`
 
 # 关于作者
-[![](https://img.shields.io/badge/GitHub-axelburks-brightgreen.svg?logo=Telegram&logoColor=white)](https://github.com/axelburks)
+[![](https://img.shields.io/badge/GitHub-axelburks-brightgreen.svg?logo=GitHub&logoColor=white)](https://github.com/axelburks)
 [![](https://img.shields.io/badge/Telegram-@axel__burks-1A92D2.svg?logo=Telegram&logoColor=white)](https://t.me/axel_burks)
