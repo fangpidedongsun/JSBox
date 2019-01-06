@@ -14,7 +14,26 @@
 
 作者联系：https://t.me/axel_burks
 */
-var version = 0.8
+var version = 1.1
+
+$app.strings = {
+  "en": {
+    "ALERT": "Open Wechat?",
+    "SCANMORE": "Which has more accurate recognition effect",
+    "OK": "OK",
+    "CANCEL": "Cancel",
+    "SCAN": "Scan",
+    "CANNOTOPEN": "No available app can open the URL Scheme on the device.",
+  },
+  "zh-Hans": {
+    "ALERT": "是否打开微信？",
+    "SCANMORE": "具有更佳的识别率",
+    "OK": "好的",
+    "CANCEL": "取消",
+    "SCAN": "扫描",
+    "CANNOTOPEN": "缺少对应 App，无法打开 URL Scheme",
+  }
+}
 
 var autoUpdate = $context.image ? false : true
 Object.size = function(obj) {
@@ -35,7 +54,7 @@ if (qr == null) {
       showResult(string, false)
     },
     cancelled() {
-      $app.openURL("weixin://scanqrcode")
+      cancelAction()
     }
   })
 } else {
@@ -43,7 +62,11 @@ if (qr == null) {
   if (text) {
     showResult(text, true)
   } else {
-    showWarning("run through Share Extension", true)
+    if ($context.image) {
+      showWarning(true)
+    } else {
+      showWarning()
+    }
   }
 }
 
@@ -59,6 +82,28 @@ function isContains(str, regxstr) {
   return new RegExp(regxstr).test(str)
 }
 
+function cancelAction() {
+  $ui.alert({
+    title: $l10n("ALERT"),
+    message: $l10n("SCANMORE"),
+    actions: [{
+      title: $l10n("CANCEL"),
+      style: "Cancel",
+      handler: function() {
+        $system.home()
+        $app.close()
+      }
+    },
+    {
+      title: $l10n("OK"),
+      handler: function() {
+        $app.openURL("weixin://scanqrcode")
+        $app.close()
+      }
+    }]
+  })
+}
+
 function showResult(text, runningExt) {
 //$clipboard.text = text
 //$clipboard.save(text)
@@ -66,16 +111,19 @@ function showResult(text, runningExt) {
     "type": "public.plain-text",
     "value": text
   })
-  var scheme = text.match(/^(?!ssr?:\/\/)\w+:\/\/[^\s]*/i)
+  var scheme = text.match(/^(?!ssr?:\/\/)[\w-]+:\/\/[^\s]*/i)
   if (scheme) {
-    var url = text.match(/^(https?|weixin|wxp):\/\/[^\s]+/i)[0]
+    var result = ""
+    scheme = scheme[0]
+    var url = text.match(/^(https?|weixin|wxp|itms-services):\/\/[^\s]+/i)
     if (url) {
+      url = url[0]
       if (isContains(url,/weibo\.cn/i)) {
         scheme = "weibo://qrcode"
       } else if (isContains(url,/(weixin|wxp):\/\/|weixin\.qq|tenpay\.com/i)) {
         scheme = "weixin://scanqrcode"
-      } else if (isContains(url,/(wsk|txz)\.qq\.com/i)) {
-        scheme = "mqq://"
+      } else if (isContains(url,/(wsk|txz|unipay)\.qq\.com/i)) {
+        scheme = "tim://qrcode/scan_qrcode?version=1&src_type=app"
       } else if (isContains(url,/zhihu\.com.*question/i)) {
         scheme = url.toString().replace(/https?/i,"zhihu")
       } else if (isContains(url,/ofo\.so\/plate/i)) {
@@ -83,10 +131,13 @@ function showResult(text, runningExt) {
       } else if (isContains(url,/taobao\.com|tb\.cn|tmall\.com|qazdsa\.com/i)) {
         scheme = url.toString().replace(/https?/i,"taobao")
       } else if (isContains(url,/qr\.shouqianba\.com|qr\.alipay\.com.*PAI_LOGIN/i)) {
-          scheme = "alipays://platformapi/startapp?saId=10000007"
-      } else if (isContains(url,/(qr|d)\.alipay\.com\/(kox|sux)/i)) {
+        scheme = "alipays://platformapi/startapp?saId=10000007"
+      } else if (isContains(url,/(qr|d)\.(alipay|koubei)\.com\/(\w+\/)?(kox|kox|sux|stx)/i)) {
         scheme = "koubei://platformapi/startapp?saId=10000007&qrcode=" + url
-      } else if (isContains(url,/(qr|d)\.alipay\.com|spay3\.swiftpass\.cn|tlt\.allinpay\.com|v\.ubox\.cn\/qr|i\.55tuan\.com\/rq/i)) {
+      } else if (isContains(url,/(qr|d|m)\.alipay\.com|spay3\.swiftpass\.cn|tlt\.allinpay\.com|v\.ubox\.cn\/qr|i\.55tuan\.com\/rq/i)) {
+        if (!isContains(url,/^[0-9A-Z\:\/\/]+$/)) {
+          url = $text.URLEncode(url)
+        }
         scheme = "alipays://platformapi/startapp?saId=10000007&qrcode=" + url
       } else if (isContains(url,/item\.(m\.)?jd\.com/i)) {
         var skuId = url.toString().match(/item.*?jd\.com\/.*?(\d+)(?=\.html)/i)[1]
@@ -95,15 +146,57 @@ function showResult(text, runningExt) {
         var key = url.toString().match(/qr\.m\.jd\.com\/p\?k=([^\s]+)/i)[1]
         scheme = "openApp.jdMobile://virtual?params=" + encodeURIComponent("{\"category\":\"jump\",\"des\":\"ScanLogin\",\"key\":\"" + key + "\"}")
       }
+      var preResult = $app.openURL(scheme);
+      if (preResult) {
+        result = preResult
+      } else {
+        if (isContains(scheme,/koubei:\/\/platformapi/i)) {
+          scheme = scheme.replace("koubei://","alipays://");
+          result = $app.openURL(scheme);
+          if (!result) {
+            result = $app.openURL(url);
+          }
+        } else if (isContains(scheme,/tim:\/\/qrcode/i)) {
+          scheme = scheme.replace("tim://","mqqapi://");
+          result = $app.openURL(scheme);
+          if (!result) {
+            result = $app.openURL(url);
+          }
+        } else {
+          result = $app.openURL(url);
+        }
+      }
+    } else {
+      result = $app.openURL(scheme);
     }
-    $app.openURL(scheme)
-    if (runningExt)
-      $context.close()
+
+    if (result) {
+      if (runningExt)
+        $context.close()
+      $app.close()
+    } else {
+      $ui.alert({
+        title: $l10n("CANNOTOPEN"),
+        message: scheme,
+        actions: [{
+          title: "OK",
+          style: "Cancel",
+          handler: function() {
+            if (runningExt)
+              $context.close()
+            $system.home()
+            $app.close()
+          }
+        }]
+      })
+    }
+
   } else if (text.match(/^magnet:[^\s]+/i)) {
     var magnet_link = text.match(/^magnet:[^\s]+/i)[0]
     $app.openURL("thunder://" + $text.base64Encode(magnet_link))
     if (runningExt)
       $context.close()
+    $app.close()
   } else {
     $ui.alert({
       title: "Clipboard Saved",
@@ -115,25 +208,47 @@ function showResult(text, runningExt) {
           if (runningExt)
             $context.close()
           $system.home()
+          $app.close()
         }
       }]
     })
   }
 }
 
-function showWarning(text, runningExt) {
-$ui.alert({
-  title: "QR Code Error",
-  message: "The image you " + text + " should be a QR Code.\n\nPlease try again.",
-  actions: [{
-    title: "OK",
-    style: "Cancel",
-    handler: function() {
-      if (runningExt)
-        $context.close()
-    }
-  }]
-})
+function showWarning(runningExt) {
+  if (runningExt) {
+    $ui.alert({
+      title: "QR Code Error",
+      message: "\nShared Image is NOT a QR Code.\n\nPlease try others.",
+      actions: [{
+        title: $l10n("OK"),
+        style: "Cancel",
+        handler: function() {
+          $context.close()
+        }
+      }]
+    })
+  } else {
+    $ui.alert({
+      title: "QR Code Error",
+      message: "\nClip Content is NOT a QR Code.\n\nCancel OR Scan?",
+      actions: [{
+        title: $l10n("CANCEL"),
+        style: "Cancel",
+        handler: function() {
+          $system.home()
+          $app.close()
+        }
+      },
+      {
+        title: $l10n("SCAN"),
+        handler: function() {
+          $clipboard.clear();
+          $app.openURL("jsbox://run?name=" + encodeURI($addin.current.name));
+        }
+      }]
+    })
+  }
 }
 
 function checkVersion() {
@@ -149,7 +264,7 @@ function checkVersion() {
           actions: [{
             title: "更新",
             handler: function() {
-              var url = "jsbox://install?url=https://raw.githubusercontent.com/axelburks/JSBox/master/XQRcode.js&name=XQRcode&icon=icon_102.png";
+              var url = "jsbox://install?url=https://raw.githubusercontent.com/axelburks/JSBox/master/XQRcode.js&name=" + $addin.current.name.split(".js")[0] + "&icon=" + $addin.current.icon;
               $app.openURL(encodeURI(url));
               $app.close()
             }
