@@ -23,3 +23,7 @@
 
 [![](https://img.shields.io/badge/Top%20Playlists-Ryan-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/Ryan/Top%20Playlists.js)  
 `QQ 音乐、Billborad、iTunes Top Playlists 快捷播放`
+
+# 关于作者
+[![](https://img.shields.io/badge/Telegram-@ryanryanryan-1A92D2.svg?logo=Telegram&logoColor=white)](https://t.me/ryanryanryan)
+[![](https://img.shields.io/badge/个人主页-Ryan-brightgreen.svg)](https://www.ryannn.com/)
