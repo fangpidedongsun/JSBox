@@ -1,3 +1,5 @@
+# JSBox 脚本合集 ![](http://progressed.io/bar/30?title=Editing)
+
 ![](https://img.shields.io/badge/1Search-JunM-brightgreen.svg)  
 `聚合搜索（Google、搜狗、知乎、少数派、Google 图片、YouTube、必应词典、淘宝、京东、IP）`
 
@@ -11,7 +13,7 @@
 `百度网盘直链获取`
 
 ![](https://img.shields.io/badge/ACPlayer-AbleCats-brightgreen.svg)  
-
+``
 
 ![](https://img.shields.io/badge/Add%20to%20Library-Ryan-brightgreen.svg)  
 
