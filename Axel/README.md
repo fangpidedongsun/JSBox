@@ -1,6 +1,6 @@
 # Axel JSBox 脚本合集
 
-0
+
 ![](https://img.shields.io/badge/Clip%20Editor-Axel-brightgreen.svg)  
 `剪贴板内容快速编辑`
 
