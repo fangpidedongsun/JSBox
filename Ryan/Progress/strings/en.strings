@@ -1,0 +1,81 @@
+"widget_week_title" = "Week Progress";
+"widget_month_title" = "Month Progress";
+"widget_year_title" = "Year Progress";
+
+
+"menu_home" = "Home";
+"menu_settings" = "Settings";
+
+
+"home_refresh" = "Refresh";
+"home_simulator" = "Simulator";
+"home_selection" = "Selection";
+"home_footer" = "Select the progress you want it to display on widget, and long press to reorder them.";
+
+
+"settings_progress" = "Configuration";
+"settings_general" = "General";
+
+"settings_week" = "Week Progress";
+"settings_month" = "Month Progress";
+"settings_year" = "Year Progress";
+"settings_clear_cache" = "Clear Cache";
+"settings_website" = "Website";
+"settings_footer" = "Created by RYAN.\nVersion ";
+"settings_toast_clear_cache" = "Clear cache success";
+
+
+"week_guide_text" = "Have a nice day";
+"week_guide_discription_hour" = "Hour\t=> The end of the timeline.";
+"week_guide_discription_emoji" = "Emoji\t=> The emotion of the timeline.";
+"week_guide_discription_text" = "Text\t=> The text of the timeline, see README for more in detail.";
+
+"week_list_title" = "Timeline";
+"week_monday" = "Monday";
+"week_tuesday" = "Tuesday";
+"week_wednesday" = "Wednesday";
+"week_thursday" = "Thursday";
+"week_friday" = "Friday";
+"week_saturday" = "Saturday";
+"week_sunday" = "Sunday";
+
+"week_button_insert" = "INSERT";
+"week_button_reset" = "RESET";
+
+"week_modify" = "Modify Timeline";
+"week_delete" = "Delete Timeline";
+"week_reset" = "Reset All";
+"week_reset_title" = "Reset All";
+"week_reset_message" = "Sure to reset all timelines to default ?";
+"week_toast_reset" = "Reset success";
+
+"week_hour" = "Hour";
+"week_emoji" = "Emoji";
+"week_text" = "Text";
+"week_button_save" = "SAVE";
+
+
+"month_guide_text" = "Another big day";
+"month_guide_discription_date" = "Date\t=> The date of the event.";
+"month_guide_discription_title" = "Title\t=> The title of the event.";
+
+"month_list_display" = "Display";
+"month_list_history" = "History";
+
+"month_button_insert" = "INSERT";
+
+"month_modify" = "Modify Event";
+"month_display" = "Display on Widget";
+"month_delete" = "Delete Event";
+
+"month_date" = "Date";
+"month_title" = "Title";
+"month_button_save" = "SAVE";
+
+
+"year_check_title" = "Check for Update";
+"year_check_message" = "Mostly it will be updated after the new schedule is published at the end of the year.";
+"year_check" = "Check and Update";
+
+"year_toast_uptodate" = "The configuration is up to date";
+"year_toast_updated" = "Update success";

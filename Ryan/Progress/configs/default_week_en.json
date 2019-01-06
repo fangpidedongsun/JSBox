@@ -1,0 +1,49 @@
+{
+  "1": [{
+    "emoji": "😣",
+    "msg": "$d-2$ days left to the weekend, back to work",
+    "end": 24
+  }],
+  "2": [{
+    "emoji": "😔",
+    "msg": "$d-2$ days left to the weekend, back to work",
+    "end": 24
+  }],
+  "3": [{
+    "emoji": "😟",
+    "msg": "$d-2$ days left to the weekend, back to work",
+    "end": 24
+  }],
+  "4": [{
+    "emoji": "🙁",
+    "msg": "$d-2$ days left to the weekend, back to work",
+    "end": 24
+  }],
+  "5": [{
+      "emoji": "😐",
+      "msg": "Only less than $h-5$ hours left to the weekend",
+      "end": 18
+    },
+    {
+      "emoji": "🤓",
+      "msg": "A good weekend starts soon",
+      "end": 24
+    }
+  ],
+  "6": [{
+    "emoji": "😎",
+    "msg": "Enjoy the weekend and live up to the hard work",
+    "end": 24
+  }],
+  "0": [{
+      "emoji": "😌",
+      "msg": "It remains $h-$ hours of the weekend, let it go",
+      "end": 21
+    },
+    {
+      "emoji": "😑",
+      "msg": "The weekend is less than $h+$ hours",
+      "end": 24
+    }
+  ]
+}

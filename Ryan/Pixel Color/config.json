@@ -1,0 +1,23 @@
+{
+  "widget" : {
+    "tintColor" : "",
+    "iconColor" : "",
+    "height" : 0
+  },
+  "info" : {
+    "website" : "",
+    "author" : "Ryan",
+    "types" : 1,
+    "name" : "",
+    "url" : "",
+    "version" : "1.0"
+  },
+  "settings" : {
+    "minOSVer" : "10.0.0",
+    "minSDKVer" : "1.29.0",
+    "rotateDisabled" : true,
+    "autoKeyboardEnabled" : false,
+    "keyboardToolbarEnabled" : false,
+    "idleTimerDisabled" : false
+  }
+}

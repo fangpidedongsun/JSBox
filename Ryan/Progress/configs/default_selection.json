@@ -1,0 +1,20 @@
+{
+  "0": {
+    "name_en":"Week Progress",
+    "name_zh":"周进度",
+    "view":"week",
+    "display":true
+  },
+  "1": {
+    "name_en":"Month Progress",
+    "name_zh":"月进度",
+    "view":"month",
+    "display":false
+  },
+  "2": {
+    "name_en":"Year Progress",
+    "name_zh":"年进度",
+    "view":"year",
+    "display":true
+  }
+}

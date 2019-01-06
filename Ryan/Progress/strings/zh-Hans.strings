@@ -1,0 +1,81 @@
+"widget_week_title" = "周进度";
+"widget_month_title" = "月进度";
+"widget_year_title" = "年进度";
+
+
+"menu_home" = "首页";
+"menu_settings" = "设置";
+
+
+"home_refresh" = "刷新";
+"home_simulator" = "日期模拟";
+"home_selection" = "视图选择";
+"home_footer" = "选择显示在小部件的视图，并通过长按操作对其排序。";
+
+
+"settings_progress" = "进度配置";
+"settings_general" = "通用";
+
+"settings_week" = "周进度";
+"settings_month" = "月进度";
+"settings_year" = "年进度";
+"settings_clear_cache" = "清除缓存";
+"settings_website" = "主页";
+"settings_footer" = "创作人 RYAN.\n版本号 ";
+"settings_toast_clear_cache" = "清楚缓存成功";
+
+
+"week_guide_text" = "享受美好时光";
+"week_guide_discription_hour" = "时间\t=> 该时间节点的结束时间。";
+"week_guide_discription_emoji" = "表情\t=> 该时间节点的表情描述。";
+"week_guide_discription_text" = "文本\t=> 该时间节点的文字描述，详细请查阅 README。";
+
+"week_list_title" = "时间节点";
+"week_monday" = "星期一";
+"week_tuesday" = "星期二";
+"week_wednesday" = "星期三";
+"week_thursday" = "星期四";
+"week_friday" = "星期五";
+"week_saturday" = "星期六";
+"week_sunday" = "星期日";
+
+"week_button_insert" = "插入";
+"week_button_reset" = "重置";
+
+"week_modify" = "修改时间节点";
+"week_delete" = "删除时间节点";
+"week_reset" = "全部重置";
+"week_reset_title" = "全部重置";
+"week_reset_message" = "确定重置全部时间节点为默认配置？";
+"week_toast_reset" = "重置成功";
+
+"week_hour" = "时间";
+"week_emoji" = "表情";
+"week_text" = "文本";
+"week_button_save" = "保存";
+
+
+"month_guide_text" = "伟大的一天";
+"month_guide_discription_date" = "日期\t=> 该事件的日期。";
+"month_guide_discription_title" = "标题\t=> 该事件的标题。";
+
+"month_list_display" = "小部件显示";
+"month_list_history" = "历史记录";
+
+"month_button_insert" = "插入";
+
+"month_modify" = "修改事件";
+"month_display" = "设置为小部件显示";
+"month_delete" = "删除事件";
+
+"month_date" = "日期";
+"month_title" = "标题";
+"month_button_save" = "保存";
+
+
+"year_check_title" = "检查配置更新";
+"year_check_message" = "通常情况下，配置将在年末新的法定假日安排公布后进行更新。";
+"year_check" = "检查并更新";
+
+"year_toast_uptodate" = "配置已经是最新的了";
+"year_toast_updated" = "更新成功";
