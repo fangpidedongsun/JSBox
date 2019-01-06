@@ -8,3 +8,6 @@
 
 [![](https://img.shields.io/badge/小说阅读器-wind-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/wind/%E5%B0%8F%E8%AF%B4%E9%98%85%E8%AF%BB%E5%99%A8.js)  
 `小说阅读器`
+
+# 关于作者
+[![](https://img.shields.io/badge/Telegram-@windee-1A92D2.svg?logo=Telegram&logoColor=white)](https://t.me/windee)
