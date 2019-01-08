@@ -96,6 +96,9 @@
 [![](https://img.shields.io/badge/JavBus-Nicked-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/Nicked/JavBus.js)  
 `JavBus JSBox 版`  `*NSFW`
 
+[![](https://img.shields.io/badge/Jike%20Calendar-Ryan-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/Ryan/Jike%20Calendar.js)  
+`即刻黄历 JSBox 版`
+
 [![](https://img.shields.io/badge/Jormun-Hhd%C2%BA-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/Hhd%C2%BA/Jormun.js)  
 `贪吃蛇小游戏`
 
