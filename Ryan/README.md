@@ -3,7 +3,10 @@
 [![](https://img.shields.io/badge/Delete%20Photos-Ryan-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/tree/master/Ryan/Delete%20Photos)  
 `快捷删除相册图片`
 
-[![](https://img.shields.io/badge/JS--File%20Installer-Ryan-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/Ryan/JS-File%20Installer.js)  
+[![](https://img.shields.io/badge/JS--File%20Installer-Ryan-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/Ryan/Jike%20Calendar.js)  
+`即刻黄历 JSBox 版`
+
+[![](https://img.shields.io/badge/Jike%20Calendar-Ryan-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/Ryan/JS-File%20Installer.js)  
 `脚本安装辅助`
 
 [![](https://img.shields.io/badge/Mtime%20Movie-Ryan-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/tree/master/Ryan/Mtime%20Movie)  
