@@ -279,7 +279,7 @@ const unicodeRange = {
   "Tags": [917504, 917631],
   "Variation Selectors Supplement": [917760, 917999]
 }
-
+var restart = 1
 var unicodeDisplaySort = $cache.get("displaySort")
 var unicodeSwitch = unicodeDisplaySort ? unicodeDisplaySort.display : [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 var unicodeNames = unicodeDisplaySort ? unicodeDisplaySort.sort : Object.keys(unicodeRange)
@@ -445,7 +445,9 @@ function settingView() {
     },
     events: {
       disappeared: function () {
-        $addin.restart()
+        if (restart == 1) {
+          $addin.restart()
+        }
       }
     },
     views: [{
@@ -494,6 +496,7 @@ function settingView() {
                 },
                 events: {
                   tapped: function (sender) {
+                    restart = 0
                     showCharsDetails(sender.text)
                   }
                 }
@@ -536,6 +539,11 @@ function showCharsDetails(name) {
   $ui.push({
     props: {
       title: name
+    },
+    events: {
+      disappeared: function () {
+        restart = 1
+      }
     },
     views: [{
       type: "matrix",
