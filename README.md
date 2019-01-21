@@ -27,8 +27,8 @@
 ![](https://img.shields.io/badge/Catcher-lco%20lok-brightgreen.svg)  
 `OCR 图片文本智能识别`
 
-![](https://img.shields.io/badge/Chars%20Keyboard-Neurogram-brightgreen.svg)  
-`特殊符号键盘`
+[![](https://img.shields.io/badge/Chars%20Keyboard-Neurogram-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/Neurogram/Chars%20Keyboard.js)  
+`字符键盘`
 
 ![](https://img.shields.io/badge/Check%20in-Neurogram-brightgreen.svg)  
 `多站点一键签到`
@@ -182,6 +182,9 @@
 
 [![](https://img.shields.io/badge/Top%20Playlists-Ryan-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/Ryan/Top%20Playlists.js)  
 `QQ 音乐、Billborad、iTunes Top Playlists 快捷播放`
+
+[![](https://img.shields.io/badge/WeiboImgUploader-Neurogram-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/Neurogram/WeiboImgUploader.js)  
+`快速查找微博图片上传人`
 
 [![](https://img.shields.io/badge/Weico-Axel-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/Axel/Weico.js)  
 `微博国际版链接转官方微博链接`
