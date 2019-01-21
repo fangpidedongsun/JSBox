@@ -303,6 +303,7 @@ var symbols = [historyChar].concat(unicodeName)
 $ui.render({
   props: {
     id: "mainView",
+    title: "Chars Keyboard",
     navButtons: [
       {
         icon: "002",
@@ -315,7 +316,8 @@ $ui.render({
   views: [{
     type: "menu",
     props: {
-      items: items
+      items: items,
+      segmentWidthStyle: 1
     },
     layout: function (make, view) {
       if ($app.env != $env.app) {
@@ -385,10 +387,10 @@ $ui.render({
 function dataPick(index) {
   if (index == 0) {
     $("mainMatrix").data = dataPush(historyChar, "charLabel")
-    $("mainView").title = "Chars Keyboard"
+    $ui.title = "Chars Keyboard"
   } else {
     $("mainMatrix").data = dataPush(unicodeChars(unicodeRange[symbols[index]][0], unicodeRange[symbols[index]][1]), "charLabel")
-    $("mainView").title = symbols[index]
+    $ui.title = symbols[index]
   }
 }
 
