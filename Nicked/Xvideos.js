@@ -21,7 +21,7 @@
 
    */
 
-version = 1.5
+version = 1.7
 
 var scale = 600 / 337;
 const searchPreview = {
@@ -1133,9 +1133,13 @@ function getSearchVideoList() {
       };
       var items = match.map(function(i, idx) {
         var videoid = /videoid="(.*?)"/.exec(i)[1];
+        
         var time = /<span\sclass="duration">([\s\S]*?)<\/span>/.exec(i)[1];
-        var views = /\d*?.\sViews/.exec(i)[0];
+        
+//        var views = /\d*?.\sViews/.exec(i)[0];
+var views = /duration">[\s\S]*?\s(\d{1,3}\.?\d?[kM]?)\s/.exec(i)[1]
         var url = /<a\shref="(.*?)">/.exec(i)[1];
+
         var image = /data-src="(.*?)"/.exec(i)[1].replace("thumbs169", "thumbs169lll").replace("THUMBNUM", "20");
         var title = escapeStr(/title="(.*?)"/.exec(i)[1]);
         try {
@@ -1196,7 +1200,8 @@ function getStarVideoList() {
       var items = match.map(function(i, idx) {
         var videoid = /videoid="(.*?)"/.exec(i)[1];
         var time = /<span\sclass="duration">([\s\S]*?)<\/span>/.exec(i)[1];
-        var views = /\d*?.\sViews/.exec(i)[0];
+//        var views = /\d*?.\sViews/.exec(i)[0];
+        var views = /duration">[\s\S]*?\s(\d{1,3}\.?\d?[kM]?)\s/.exec(i)[1]
         var url = /<a\shref="(.*?)">/.exec(i)[1];
         var image = /data-src="(.*?)"/.exec(i)[1].replace("thumbs169", "thumbs169lll").replace("THUMBNUM", "20");
         var title = escapeStr(/title="(.*?)"/.exec(i)[1]);
@@ -1252,7 +1257,8 @@ function getChannelVideoList() {
       var items = match.map(function(i, idx) {
         var videoid = /videoid="(.*?)"/.exec(i)[1];
         var time = /<span\sclass="duration">([\s\S]*?)<\/span>/.exec(i)[1];
-        var views = /\d*?.\sViews/.exec(i)[0];
+//        var views = /\d*?.\sViews/.exec(i)[0];
+        var views = /duration">[\s\S]*?\s(\d{1,3}\.?\d?[kM]?)\s/.exec(i)[1]
         var url = /<a\shref="(.*?)">/.exec(i)[1];
         var image = /data-src="(.*?)"/.exec(i)[1].replace("thumbs169", "thumbs169lll").replace("THUMBNUM", "20");
         var title = escapeStr(/title="(.*?)"/.exec(i)[1]);
@@ -1613,31 +1619,57 @@ function getLocalFavVideos() {
   }]
 }
 
+
+//检测扩展更新
 function scriptVersionUpdate() {
   $http.get({
-    url: "https://raw.githubusercontent.com/nicktimebreak/xteko/master/Xvideos/updateInfo",
+    url:
+      "https://raw.githubusercontent.com/nicktimebreak/xteko/master/Xvideos/updateInfo",
     handler: function(resp) {
       var afterVersion = resp.data.version;
       var msg = resp.data.msg;
       if (afterVersion > version) {
-        $ui.alert({
-          title: "检测到新的版本！V" + afterVersion,
-          message: "更新后请至扩展列表启动新版本。\n" + msg,
-          actions: [{
-            title: "更新",
-            handler: function() {
-              var url = "jsbox://install?url=https://raw.githubusercontent.com/nicktimebreak/xteko/master/Xvideos/Xvideos.js&name=Xvideos&icon=icon_135.png";
-              $app.openURL(encodeURI(url));
-              $app.close()
-            }
-          }, {
-            title: "取消"
-          }]
-        })
+        $ui.toast("发现更新，安装中...",10);
+
+        $http.download({
+          url:
+            "https://raw.githubusercontent.com/nicktimebreak/xteko/master/Xvideos/Xvideos.js",
+          handler: resp => {
+            let box = resp.data;
+            $addin.save({
+              name: $addin.current.name,
+              data: box,
+              version: afterVersion,
+              author: "Nicked",
+              icon: "icon_087",
+              handler: success => {
+                if (success) {
+                  $device.taptic(2);
+                  $delay(0.2, function() {
+                    $device.taptic(2);
+                  });
+
+                  $ui.alert({
+                    title: "更新已完成",
+                    actions: [
+                      {
+                        title: "OK",
+                        handler: function() {
+                          $addin.restart();
+                        }
+                      }
+                    ]
+                  });
+                }
+              }
+            });
+          }
+        });
       }
     }
-  })
+  });
 }
+
 
 const checkAdultView = {
   type: "view",
