@@ -1,5 +1,8 @@
 # Neurogram JSBox 脚本合集
 
+[![](https://img.shields.io/badge/Call%20Forwarding-Neurogram-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/tree/master/Neurogram/Call%20Forwarding)  
+`快速设置呼叫转移`
+
 [![](https://img.shields.io/badge/Chars%20Keyboard-Neurogram-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/Neurogram/Chars%20Keyboard.js)  
 `字符键盘`
 
