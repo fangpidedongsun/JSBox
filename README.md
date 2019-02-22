@@ -237,6 +237,9 @@
 [![](https://img.shields.io/badge/日语五十音图-Hhd%C2%BA-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/tree/master/Hhd%C2%BA/%E6%97%A5%E8%AF%AD%E4%BA%94%E5%8D%81%E9%9F%B3%E5%9B%BE)  
 `日语五十音图`
 
+[![](https://img.shields.io/badge/微博热点-Nicked-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/Nicked/%E5%BE%AE%E5%8D%9A%E7%83%AD%E7%82%B9.js)  
+`快速查看微博热搜、热搜趋势、热门微博`
+
 [![](https://img.shields.io/badge/我的账本-Hhd%C2%BA-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/Hhd%C2%BA/%E6%88%91%E7%9A%84%E8%B4%A6%E6%9C%AC.js)  
 `记账小账本`
 
