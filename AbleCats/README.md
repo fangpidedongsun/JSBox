@@ -9,7 +9,7 @@
 [![](https://img.shields.io/badge/ACPlayer-AbleCats-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/tree/master/AbleCats/ACPlayer)  
 `音乐播放器（网易云音乐、QQ 音乐、虾米三个搜索源，支持下载）`
 
-[![](https://img.shields.io/badge/GitHub-AbleCats-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/AbleCats/GitHub.js)  
+[![](https://img.shields.io/badge/GitHub-AbleCats-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/tree/master/AbleCats/GitHub)  
 `GitHub JSBox 版`
 
 [![](https://img.shields.io/badge/iCloudSync-AbleCats-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/AbleCats/iCloudSync.js)  

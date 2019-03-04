@@ -30,7 +30,7 @@
 [![](https://img.shields.io/badge/Chars%20Keyboard-Neurogram-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/Neurogram/Chars%20Keyboard.js)  
 `字符键盘`
 
-![](https://img.shields.io/badge/Check%20in-Neurogram-brightgreen.svg)  
+[![](https://img.shields.io/badge/Check%20in-Neurogram-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/Neurogram/Check%20in)  
 `多站点一键签到`
 
 [![](https://img.shields.io/badge/Clip%20Editor-Axel-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/Axel/Clip%20Editor.js)  
@@ -57,7 +57,7 @@
 [![](https://img.shields.io/badge/F--Start-Hhd%C2%BA-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/Hhd%C2%BA/F-Start.js)  
 `启动器效率工具箱`
 
-[![](https://img.shields.io/badge/GitHub-AbleCats-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/AbleCats/GitHub.js)  
+[![](https://img.shields.io/badge/GitHub-AbleCats-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/tree/master/AbleCats/GitHub)  
 `GitHub JSBox 版`
 
 ![](https://img.shields.io/badge/Google%20Translate-Neurogram-brightgreen.svg)  
@@ -254,6 +254,9 @@
 
 [![](https://img.shields.io/badge/循环删除相册内容-JunM-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/JunM/%E5%BE%AA%E7%8E%AF%E5%88%A0%E9%99%A4%E7%9B%B8%E5%86%8C%E5%86%85%E5%AE%B9.js)  
 `相册图片快捷删除`
+
+[![](https://img.shields.io/badge/自走棋小组件-橘%20年-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/%E6%A9%98%E5%B9%B4/%E8%87%AA%E8%B5%B0%E6%A3%8B%E5%B0%8F%E7%BB%84%E4%BB%B6.js)  
+`自走棋简易数据小组件`
 
 # 关于 Flow/Script
 [![](https://img.shields.io/badge/GitHub-Neurogram--R-brightgreen.svg?logo=GitHub&logoColor=white)](https://github.com/Neurogram-R)
