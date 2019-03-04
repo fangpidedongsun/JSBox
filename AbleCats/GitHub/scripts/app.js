@@ -26,8 +26,8 @@ class github {
   constructor() {
     this.file = userManeger();
     this.hosts = host;
-    this.user = `${host}/${this.file.user}`;
-    this.token = "token " + this.file.token;
+    this.user = this.file ? `${host}/${this.file.user}` : "";
+    this.token = this.file ? "token " + this.file.token : "";
   }
 
   log(d) {
@@ -41,9 +41,9 @@ class github {
     d ? log.logs.unshift(`${date}: ${d}`) : 0;
     $("logs")
       ? $("logs").insert({
-        indexPath: $indexPath(0, log.logs.lenght),
-        value: `${date}: ${d}`
-      })
+          indexPath: $indexPath(0, log.logs.lenght),
+          value: `${date}: ${d}`
+        })
       : 0;
     this.setLog(log);
   }
@@ -91,7 +91,7 @@ class github {
   async check(P, F) {
     let data = await this.requets(
       `https://api.github.com/repos/${this.file.user}/${P}/contents/${
-      F ? F : ""
+        F ? F : ""
       }`
     );
     return data;
@@ -149,8 +149,7 @@ class github {
         if (check == "underfind") {
           this.log(`${x} Ready To Upload...`);
           await this.create(x, $file.read(p), "JSBox", P);
-        }
-        else if (check == true) {
+        } else if (check == true) {
           this.log(`${x} Ready To Upload...`);
           let cloud = await this.check(P);
           cloud.map(async y => {
@@ -201,17 +200,18 @@ class github {
 
   async tokenCheck(handler) {
     handler();
-    let data = await this.requets(this.user);
-    let flag = data.login == this.file.user ? true : false;
-    this.log(`${this.file.user} login ${flag ? "succese" : "faled"}`);
+    if (this.user && this.token) {
+      let data = await this.requets(this.user);
+      let flag = data.login == this.file.user ? true : false;
+      this.log(`${this.file.user} login ${flag ? "succese" : "faled"}`);
 
-    return flag;
+      return flag;
+    } else return false;
   }
 
   async reposCheck() {
     let res = [];
-    let files = $file.list("Files");
-    this.log(`Get ${this.file.user} Repos`);
+
     let data = await this.requets(`${this.user}/repos`);
     data.map(x => res.push(x.name));
     return res;
@@ -323,16 +323,12 @@ class github {
     sqLite.close();
   }
 
-  async creatRepos(repos) {
-    let res = await this.requets("https://api.github.com/user/repos", "POST", {
-      name: repos,
-      description: "Created by GitHub for JSBox",
-      homepage: "https://github.com",
-      private: false,
-      has_issues: true,
-      has_projects: true,
-      has_wiki: true
-    });
+  async creatRepos(body) {
+    let res = await this.requets(
+      "https://api.github.com/user/repos",
+      "POST",
+      body
+    );
     return res;
   }
 }
