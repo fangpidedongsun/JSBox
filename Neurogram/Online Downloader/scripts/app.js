@@ -6,11 +6,15 @@ module.exports = {
 
 function urlCheck() {
     var videoUrl = $context.safari ? $context.safari.items.location.href : $context.link || $clipboard.text
-    if (videoUrl.match(/^http/)) {
-        if (videoUrl.indexOf("twitter.com") != -1) {
-            twitterDl(videoUrl)
+    if (videoUrl) {
+        if (videoUrl.match(/^http/)) {
+            if (videoUrl.indexOf("twitter.com") != -1) {
+                twitterDl(videoUrl)
+            } else {
+                videoParser(videoUrl)
+            }
         } else {
-            videoParser(videoUrl)
+            alert($l10n("ALERT"))
         }
     } else {
         alert($l10n("ALERT"))
