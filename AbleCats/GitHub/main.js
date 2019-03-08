@@ -1,1 +1,2 @@
-var app = require("./scripts/view");
+require("./scripts/view");
+require("./scripts/update").update();

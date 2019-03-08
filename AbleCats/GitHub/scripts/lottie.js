@@ -30,13 +30,11 @@ function lottie(name, label, style, layout) {
         }
       }
     ],
-    layout: layout
-      ? layout
-      : (make, view) => {
-        make.top.inset(0);
-        make.left.right.inset(0);
-        make.bottom.equalTo($("LG").top);
-      }
+    layout: layout ? layout : (make, view) => {
+      make.top.inset(0);
+      make.left.right.inset(0);
+      make.bottom.equalTo($("LG").top);
+    }
   };
 }
 
@@ -74,5 +72,6 @@ module.exports = {
   addLottie: addLottie,
   lottie: lottie,
   wait: () => addLottie("MainView", "loading", "Please Wait..."),
-  first: () => addLottie("MainView", "loading", "Please Wait...", 1, $layout.fill)
+  fill: () => addLottie("MainView", "loading", "Please Wait...", 0, 1, $layout.fill)
+
 };

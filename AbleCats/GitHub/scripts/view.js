@@ -6,8 +6,8 @@ let lottie = require("scripts/lottie.js");
 
 let file = app.user();
 
-$app.keyboardToolbarEnabled = true;
 $app.autoKeyboardEnabled = true;
+$app.keyboardToolbarEnabled = true;
 
 const Login = {
   type: "blur",
@@ -656,6 +656,8 @@ async function init() {
   git = new app.git();
   git.log();
 
+  $("logs").data = JSON.parse($file.read("/log").string);
+
   $thread.background({
     delay: 0.3,
     handler: async () => {
@@ -663,17 +665,14 @@ async function init() {
     }
   });
 
-  $("logs").data = JSON.parse($file.read("/log").string);
-  let flag = await git.tokenCheck(file ? lottie.wait : lottie.first);
-  lottie.lottieStop();
-
+  let flag = await git.tokenCheck($("Login").alpha ? lottie.fill : lottie.wait);
   if (flag) {
     animationOfLogin(0);
+    lottie.lottieStop();
     news = await git.folderCheck();
     if (news.length) folderTipsFlsh();
   }
   else animationOfLogin(1);
-
 
   return flag;
 }

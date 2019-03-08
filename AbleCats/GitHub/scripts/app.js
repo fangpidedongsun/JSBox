@@ -1,7 +1,9 @@
+const path = 'shared://GitHub/'
 const host = "https://api.github.com/users";
+if (!$file.exists(path)) $file.mkdir(path);
 
 function userManeger(user, token, repos) {
-  var db = $sqlite.open("Files.db");
+  var db = $sqlite.open(`${path}Files.db`);
   db.query(`SELECT * FROM User`).error
     ? db.update(`CREATE TABLE User(user text, token text,repos text)`)
     : 0;
@@ -25,9 +27,6 @@ function userManeger(user, token, repos) {
 class github {
   constructor() {
     this.file = userManeger();
-    this.hosts = host;
-    this.user = this.file ? `${host}/${this.file.user}` : "";
-    this.token = this.file ? "token " + this.file.token : "";
   }
 
   log(d) {
@@ -62,7 +61,7 @@ class github {
       body: b ? b : {},
       method: m ? m : "GET",
       header: {
-        Authorization: this.token
+        Authorization: "token " + this.file.token
       }
     };
   }
@@ -200,19 +199,18 @@ class github {
 
   async tokenCheck(handler) {
     handler();
-    if (this.user && this.token) {
-      let data = await this.requets(this.user);
-      let flag = data.login == this.file.user ? true : false;
-      this.log(`${this.file.user} login ${flag ? "succese" : "faled"}`);
+    if(!this.file.user) return false;
+    let data = await this.requets(`${host}/${this.file.user}`);
+    let flag = data.login == this.file.user ? true : false;
+    this.log(`${this.file.user} login ${flag ? "succese" : "faled"}`);
 
-      return flag;
-    } else return false;
+    return flag;
   }
 
   async reposCheck() {
     let res = [];
 
-    let data = await this.requets(`${this.user}/repos`);
+    let data = await this.requets(`${`${host}/${this.file.user}`}/repos`);
     data.map(x => res.push(x.name));
     return res;
   }
@@ -243,7 +241,7 @@ class github {
   async SQLRead(path, MD5) {
     let temp;
     let name = await this.pathName(path);
-    var db = $sqlite.open("Files.db");
+    var db = $sqlite.open(`${path}Files.db`);
     var result = db.query({
       sql: `SELECT * FROM ${name} WHERE path=?`,
       args: [path]
@@ -260,7 +258,7 @@ class github {
 
   async SQLWrite(path, MD5) {
     let name = await this.pathName(path);
-    var db = $sqlite.open("Files.db");
+    var db = $sqlite.open(`${path}Files.db`);
     db.query(`SELECT * FROM ${name.toString()}`).error
       ? db.update(`CREATE TABLE ${name}(path text, md5 text)`)
       : 0;
@@ -301,7 +299,7 @@ class github {
   async CheckFolder() {
     var data = [];
     var files = $file.list("Files");
-    var sqLite = $sqlite.open("Files.db");
+    var sqLite = $sqlite.open(`${path}Files.db`);
 
     let text = sqLite.query(`SELECT name FROM sqlite_master`).result;
     while (text.next()) {
