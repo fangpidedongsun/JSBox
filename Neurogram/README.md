@@ -9,6 +9,9 @@
 [![](https://img.shields.io/badge/Check%20in-Neurogram-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/Neurogram/Check%20in)  
 `多站点一键签到`
 
+[![](https://img.shields.io/badge/Google%20Translate-Neurogram-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/tree/master/Neurogram/Google%20Translate)  
+`Google 翻译 JSBox 版`
+
 [![](https://img.shields.io/badge/Online%20Downloader-Neurogram-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/tree/master/Neurogram/Online%20Downloader)  
 `视频下载脚本（多网站支持）`
 

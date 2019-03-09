@@ -60,7 +60,7 @@
 [![](https://img.shields.io/badge/GitHub-AbleCats-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/tree/master/AbleCats/GitHub)  
 `GitHub JSBox 版`
 
-![](https://img.shields.io/badge/Google%20Translate-Neurogram-brightgreen.svg)  
+[![](https://img.shields.io/badge/Google%20Translate-Neurogram-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/tree/master/Neurogram/Google%20Translate)  
 `Google 翻译 JSBox 版`
 
 [![](https://img.shields.io/badge/HList-Nicked-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/Nicked/HList.js)  
