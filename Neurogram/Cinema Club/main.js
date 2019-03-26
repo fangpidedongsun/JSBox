@@ -1,6 +1,7 @@
 const app = require('./scripts/app');
 const general = require('/scripts/general');
-if ($app.env == $env.today) {
+
+if ($app.env != $env.app) {
     let name = $text.URLEncode($addin.current.name.split(".js"))
     $app.openURL("jsbox://run?name=" + name)
 } else {
