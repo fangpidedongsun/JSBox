@@ -1,10 +1,9 @@
-const app = require('./scripts/app');
-const general = require('/scripts/general');
-
 if ($app.env != $env.app) {
     let name = $text.URLEncode($addin.current.name.split(".js"))
     $app.openURL("jsbox://run?name=" + name)
 } else {
+    const app = require('./scripts/app');
+    const general = require('/scripts/general');
     if ($context.query.settings) {
         let settingsOldConf = $context.query.settings
         let settingsConf = JSON.parse($file.read("assets/settings.json").string)
