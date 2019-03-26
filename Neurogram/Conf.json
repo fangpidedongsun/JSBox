@@ -1,9 +1,13 @@
 {
     "Sky Movie": {
         "version": "4.5(181210)",
-        "link":"https://raw.githubusercontent.com/Neurogram-R/JSBox/master/Sky%20Movie.box"
+        "link": "https://raw.githubusercontent.com/Neurogram-R/JSBox/master/Sky%20Movie.box"
     },
     "Surge³": {
         "version": "0.9.2(181204)"
+    },
+    "Cinema Club": {
+        "version": "1.0.0(190325)",
+        "link": "https://xteko.com/redir?name=Cinema%20Club&url=https%3A%2F%2Fraw.githubusercontent.com%2FNeurogram-R%2FJSBox%2Fmaster%2FNeurogram%2FCinema%2520Club%2F.output%2FCinema%2520Club.box&icon=icon_115.png&version=1.0&author=Neurogram"
     }
 }
