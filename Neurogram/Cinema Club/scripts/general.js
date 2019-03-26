@@ -478,7 +478,7 @@ function generalViewIn(type, keyword) {
                 views: [{
                     type: "label",
                     props: {
-                        text: "Sky Movie by Neurogram",
+                        text: "Cinema Club by Neurogram",
                         align: $align.center,
                         font: $font(".SFUIText", 12),
                         textColor: $color("#AAAAAA")
