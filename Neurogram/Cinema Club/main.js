@@ -1,3 +1,4 @@
+$app.rotateDisabled = true
 if ($app.env != $env.app) {
     let name = $text.URLEncode($addin.current.name.split(".js"))
     $app.openURL("jsbox://run?name=" + name)

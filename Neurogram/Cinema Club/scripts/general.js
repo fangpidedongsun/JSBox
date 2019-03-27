@@ -858,7 +858,7 @@ async function scriptUpdata(type) {
     }
     let conf = await $http.get("https://raw.githubusercontent.com/Neurogram-R/JSBox/master/Neurogram/Conf.json")
     if (type == 0) {
-        if (conf.data["Cinema Club"].version != "1.0.0(190325)") {
+        if (conf.data["Cinema Club"].version != "1.0.0(190326)") {
             $("updateLabel").text = "🤖 更新脚本 ❗"
         } else {
             $("updateLabel").text = "🤖 更新脚本"
