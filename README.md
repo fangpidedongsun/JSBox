@@ -210,22 +210,22 @@
 [![](https://img.shields.io/badge/固件验证查询-Hhd%C2%BA-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/Hhd%C2%BA/%E5%9B%BA%E4%BB%B6%E9%AA%8C%E8%AF%81%E6%9F%A5%E8%AF%A2.js)  
 `固件验证快捷查询`
 
-![](https://img.shields.io/badge/橘历-橘%20年-brightgreen.svg)  
+[![](https://img.shields.io/badge/橘年課程表-橘%20年-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/%E6%A9%98%20%E5%B9%B4/%E6%A9%98%E5%B9%B4%E8%AA%B2%E7%A8%8B%E8%A1%A8.js)  
+`快捷课程表`
+
+[![](https://img.shields.io/badge/橘历-橘%20年-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/%E6%A9%98%20%E5%B9%B4/%E6%A9%98%E5%8E%86.js)  
 `快捷日历查看`
 
-![](https://img.shields.io/badge/橘年翻译-橘%20年-brightgreen.svg)  
-`快捷文本翻译`
-
-![](https://img.shields.io/badge/橘年天气-橘%20年-brightgreen.svg)  
+[![](https://img.shields.io/badge/橘年天气-橘%20年-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/%E6%A9%98%20%E5%B9%B4/%E6%A9%98%E5%B9%B4%E5%A4%A9%E6%B0%94.js)  
 `快捷天气查询`
 
-![](https://img.shields.io/badge/橘年颜色-橘%20年-brightgreen.svg)  
+[![](https://img.shields.io/badge/橘年颜色-橘%20年-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/%E6%A9%98%20%E5%B9%B4/%E6%A9%98%E5%B9%B4%E9%A2%9C%E8%89%B2.js)  
 `随机颜色展示（可复制 Hex/Rgb 值）`
 
-![](https://img.shields.io/badge/橘年音乐-橘%20年-brightgreen.svg)  
+[![](https://img.shields.io/badge/橘年音乐-橘%20年-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/%E6%A9%98%20%E5%B9%B4/%E6%A9%98%E5%B9%B4%E9%9F%B3%E4%B9%90.js)  
 `音乐播放器（多源支持）`
 
-![](https://img.shields.io/badge/橘年阅读-橘%20年-brightgreen.svg)  
+[![](https://img.shields.io/badge/橘年阅读-橘%20年-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/%E6%A9%98%20%E5%B9%B4/%E6%A9%98%E5%B9%B4%E9%98%85%E8%AF%BB.js)  
 `随机文章阅读`
 
 [![](https://img.shields.io/badge/句子迷-Hhd%C2%BA-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/Hhd%C2%BA/%E5%8F%A5%E5%AD%90%E8%BF%B7.js)  
@@ -242,6 +242,9 @@
 
 [![](https://img.shields.io/badge/日语五十音图-Hhd%C2%BA-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/tree/master/Hhd%C2%BA/%E6%97%A5%E8%AF%AD%E4%BA%94%E5%8D%81%E9%9F%B3%E5%9B%BE)  
 `日语五十音图`
+
+[![](https://img.shields.io/badge/网页快照-Nicked-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/Nicked/%E7%BD%91%E9%A1%B5%E5%BF%AB%E7%85%A7.js)  
+`网页快照`
 
 [![](https://img.shields.io/badge/微博热点-Nicked-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/Nicked/%E5%BE%AE%E5%8D%9A%E7%83%AD%E7%82%B9.js)  
 `快速查看微博热搜、热搜趋势、热门微博`

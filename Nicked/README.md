@@ -21,6 +21,9 @@
 [![](https://img.shields.io/badge/Xvideos-Nicked-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/Nicked/Xvideos.js)  
 `Xvideos JSBox 版`  `*NSFW`
 
+[![](https://img.shields.io/badge/网页快照-Nicked-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/Nicked/%E7%BD%91%E9%A1%B5%E5%BF%AB%E7%85%A7.js)  
+`网页快照`
+
 [![](https://img.shields.io/badge/微博热点-Nicked-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/Nicked/%E5%BE%AE%E5%8D%9A%E7%83%AD%E7%82%B9.js)  
 `快速查看微博热搜、热搜趋势、热门微博`
 
