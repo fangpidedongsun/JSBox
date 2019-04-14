@@ -33,6 +33,9 @@
 [![](https://img.shields.io/badge/Check%20in-Neurogram-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/Neurogram/Check%20in)  
 `多站点一键签到`
 
+[![](https://img.shields.io/badge/Cinema%20Club-Neurogram-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/Neurogram/Cinema%20Club)  
+`在线影视/在线小说/资源下载/在线电视直播`
+
 [![](https://img.shields.io/badge/Clip%20Editor-Axel-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/Axel/Clip%20Editor.js)  
 `剪贴板内容快速编辑`
 
@@ -155,6 +158,9 @@
 
 [![](https://img.shields.io/badge/Qiniu%20Manager-Ryan-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/tree/master/Ryan/Qiniu%20Manager)  
 `七牛文件管理`
+
+[![](https://img.shields.io/badge/Q--Search-Neurogram-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/tree/master/Neurogram/Q-Search)  
+`快速搜索`
 
 [![](https://img.shields.io/badge/RedeemiTunesCode-JunM-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/JunM/RedeemiTunesCode.js)  
 `快捷兑换  iTunes 兑换码`
