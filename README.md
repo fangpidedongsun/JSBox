@@ -138,7 +138,7 @@
 [![](https://img.shields.io/badge/Online%20Downloader-Neurogram-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/tree/master/Neurogram/Online%20Downloader)  
 `视频下载脚本（多网站支持）`
 
-[![](https://img.shields.io/badge/PIC_Compress-JunM-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/blob/master/JunM/PIC_Compress.js)  
+[![](https://img.shields.io/badge/Photo%20Compress-JunM-brightgreen.svg)](https://github.com/Neurogram-R/JSBox/tree/master/JunM/Photo%20Compress)  
 `快捷图片压缩`
 
 ![](https://img.shields.io/badge/PickFrom-Neurogram-brightgreen.svg)  
