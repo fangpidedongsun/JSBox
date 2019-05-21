@@ -3,7 +3,7 @@
 - Open web links in native apps instead
 - Run Script with Share Extension or Copy a Link First.
 
-👉 [Opener app in Store](https://itunes.apple.com/cn/app/opener-open-links-in-apps/id989565871?l=en&mt=8) 
+👉 [Opener by tijo, inc in App Store](https://itunes.apple.com/cn/app/opener-open-links-in-apps/id989565871?l=en&mt=8) 
   
   
 ## 关于作者
