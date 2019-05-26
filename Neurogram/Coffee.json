@@ -1,4 +1,8 @@
 [{
+    "donator": "*m",
+    "amount": "￥1.00"
+},
+{
     "donator": "*",
     "amount": "￥5.00"
 },
