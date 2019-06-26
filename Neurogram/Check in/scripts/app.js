@@ -142,13 +142,9 @@ function shadow(view) {
 }
 
 async function checkin(url, email, password, title) {
-    if (url.indexOf("auth/login") != -1) {
-        var checkinUrl = "user/checkin"
-    } else {
-        var checkinUrl = "user/_checkin.php"
-    }
+    let checkinPath = url.indexOf("auth/login") != -1 ? "user/checkin" : "user/_checkin.php"
     let resp = await $http.post({
-        url: url.replace(/user\/login.php|auth\/login/g, "") + checkinUrl
+        url: url.replace(/(auth|user)\/login(.php)*/g, "") + checkinPath
     })
     if (resp.data.msg) {
         dataResults(url, resp.data.msg, title)
@@ -158,14 +154,10 @@ async function checkin(url, email, password, title) {
 }
 
 async function login(url, email, password, title) {
-    if (url.indexOf("auth/login") != -1) {
-        var loginUrl = "auth/login"
-    } else {
-        var loginUrl = "user/_login.php"
-    }
+    let loginPath = url.indexOf("auth/login") != -1 ? "auth/login" : "user/_login.php"
     let resp = await $http.request({
         method: "POST",
-        url: url.replace(/user\/login.php|auth\/login/g, "") + loginUrl,
+        url: url.replace(/(auth|user)\/login(.php)*/g, "") + loginPath,
         header: {
             "Content-Type": "application/x-www-form-urlencoded"
         },
@@ -187,20 +179,16 @@ async function login(url, email, password, title) {
 }
 
 async function dataResults(url, checkInResult, title) {
-    if (url.indexOf("auth/login") != -1) {
-        var userUrl = "user"
-    } else {
-        var userUrl = "user/index.php"
-    }
-    let resp = await $http.get(url.replace(/user\/login.php|auth\/login/g, "") + userUrl)
-    let usedData = resp.data.match(/(已用\s\d.+?%|>已用(里程|流量)|>\s已用流量)[^B]+/)
+    let userPath = url.indexOf("auth/login") != -1 ? "user" : "user/index.php"
+    let resp = await $http.get(url.replace(/(auth|user)\/login(.php)*/g, "") + userPath)
+    let usedData = resp.data.match(/(>*\s*已用(里程|流量|\s\d.+?%|：))[^B]+/)
     if (usedData) {
         usedData = usedData[0].match(/\d\S*(K|G|M|T)/)
-        let restData = resp.data.match(/(剩余\s\d.+?%|>剩余(里程|流量)|>\s剩余流量)[^B]+/)
+        let restData = resp.data.match(/(>*\s*(剩余|可用)(里程|流量|\s\d.+?%|：))[^B]+/)
         restData = restData[0].match(/\d\S*(K|G|M|T)/)
         matrixData.push({
             logo: {
-                src: url.replace(/user\/login.php|auth\/login/g, "") + "favicon.ico"
+                src: url.replace(/(auth|user)\/login(.php)*/g, "") + "favicon.ico"
             },
             webTitle: {
                 text: title
