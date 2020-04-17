@@ -168,7 +168,7 @@ async function login(url, email, password, title) {
         }
     })
     if (resp.response.statusCode == 200) {
-        if (resp.data.msg == "邮箱或者密码错误") {
+        if (JSON.parse(data).msg.match(/邮箱或者密码错误|Mail or password is incorrect/)) {
             $ui.toast(title + "邮箱或者密码错误")
         } else {
             checkin(url, email, password, title)
@@ -178,37 +178,62 @@ async function login(url, email, password, title) {
     }
 }
 
-async function dataResults(url, checkInResult, title) {
+async function dataResults(url, checkinMsg, title) {
     let userPath = url.indexOf("auth/login") != -1 ? "user" : "user/index.php"
     let resp = await $http.get(url.replace(/(auth|user)\/login(.php)*/g, "") + userPath)
-    let usedData = resp.data.match(/(>*\s*已用(里程|流量|\s\d.+?%|：))[^B]+/)
-    if (usedData) {
-        usedData = usedData[0].match(/\d\S*(K|G|M|T)/)
-        let restData = resp.data.match(/(>*\s*(剩余|可用)(里程|流量|\s\d.+?%|：))[^B]+/)
-        restData = restData[0].match(/\d\S*(K|G|M|T)/)
-        matrixData.push({
-            logo: {
-                src: url.replace(/(auth|user)\/login(.php)*/g, "") + "favicon.ico"
-            },
-            webTitle: {
-                text: title
-            },
-            text0: {
-                text: checkInResult
-            },
-            text1: {
-                text: "已用流量：" + usedData[0] + "B"
-            },
-            text2: {
-                text: "剩余流量：" + restData[0] + "B"
-            }
-        })
-        $("matrix").data = matrixData.reverse()
+    let data = resp.data
+
+    if (data.match(/theme\/malio/)) {
+
+        let flowInfo = data.match(/trafficDountChat\s*\(([^\)]+)/)
+        if (flowInfo) {
+            let flowData = flowInfo[1].match(/\d[^\']+/g)
+            var usedData = flowData[0]
+            var restData = flowData[2]
+        }
+
     } else {
-        $ui.toast(title + "登录失败")
+
+        var usedData = data.match(/(Used Transfer|>过去已用|>已用|\"已用)[^B]+/)
+        if (usedData) {
+            usedData = flowFormat(usedData[0])
+        }
+
+        var restData = data.match(/(Remaining Transfer|>剩余流量|>可用|\"剩余)[^B]+/)
+        if (restData) {
+            restData = flowFormat(restData[0])
+        }
+
     }
+
+    matrixData.push({
+        logo: {
+            src: url.replace(/(auth|user)\/login(.php)*/g, "") + "favicon.ico"
+        },
+        webTitle: {
+            text: title
+        },
+        text0: {
+            text: checkinMsg
+        },
+        text1: {
+            text: usedData ? "已用流量：" + usedData : "流量信息获取失败"
+        },
+        text2: {
+            text: restData ? "剩余流量：" + restData : "流量信息获取失败"
+        }
+    })
+    $("matrix").data = matrixData.reverse()
+
 }
 
 function getData() {
     return JSON.parse($file.read("assets/data.json").string)
+}
+
+
+function flowFormat(data) {
+    data = data.replace(/\d+(\.\d+)*%/, "")
+    let flow = data.match(/\d+(\.\d+)*\w*/)
+    return flow[0] + "B"
 }
